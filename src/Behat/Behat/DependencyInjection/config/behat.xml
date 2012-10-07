@@ -53,6 +53,7 @@
         <parameter key="behat.console.processor.help.class">Behat\Behat\Console\Processor\HelpProcessor</parameter>
         <parameter key="behat.console.processor.gherkin.class">Behat\Behat\Console\Processor\GherkinProcessor</parameter>
         <parameter key="behat.console.processor.run.class">Behat\Behat\Console\Processor\RunProcessor</parameter>
+        <parameter key="behat.console.processor.coverage.class">Behat\Behat\Console\Processor\CoverageProcessor</parameter>
 
         <!-- Context -->
         <parameter key="behat.context.class">FeatureContext</parameter>
@@ -160,6 +161,10 @@
             <tag name="behat.console.processor" />
         </service>
         <service id="behat.console.processor.run" class="%behat.console.processor.run.class%">
+            <argument type="service" id="service_container" />
+            <tag name="behat.console.processor" />
+        </service>
+        <service id="behat.console.processor.coverage" class="%behat.console.processor.coverage.class%">
             <argument type="service" id="service_container" />
             <tag name="behat.console.processor" />
         </service>
