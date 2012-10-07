@@ -104,6 +104,37 @@ class Configuration
                 end()->
             end()->
             children()->
+                arrayNode('coverage')->
+                    fixXmlConfig('parameter')->
+                    children()->
+                        arrayNode('whitelist')->
+                            children()->
+                                arrayNode('dir')->
+                                    useAttributeAsKey(0)->
+                                    prototype('variable')->end()->
+                                end()->
+                                arrayNode('file')->
+                                    useAttributeAsKey(0)->
+                                    prototype('variable')->end()->
+                                end()->
+                            end()->
+                        end()->
+                        arrayNode('blacklist')->
+                            children()->
+                                arrayNode('dir')->
+                                    useAttributeAsKey(0)->
+                                    prototype('variable')->end()->
+                                end()->
+                                arrayNode('file')->
+                                    useAttributeAsKey(0)->
+                                    prototype('variable')->end()->
+                                end()->
+                            end()->
+                        end()->
+                    end()->
+                end()->
+            end()->
+            children()->
                 arrayNode('context')->
                     fixXmlConfig('parameter')->
                     children()->

@@ -48,6 +48,7 @@ class BehatCommand extends BaseCommand
                 new Processor\InitProcessor(),
                 new Processor\ContextProcessor(),
                 new Processor\FormatProcessor(),
+                new Processor\CoverageProcessor(),
                 new Processor\HelpProcessor(),
                 new Processor\GherkinProcessor(),
                 new Processor\RunProcessor(),
